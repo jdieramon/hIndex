@@ -41,11 +41,12 @@ geth <- function(file) {
 #' by the \code{geth} function and plots them up.
 #'
 #' @param file a tidy data frame with papers in rows and other info in colums;
-#' column 7 corresponds to the first year of h=0.
+#' @param a starting year, so h=0 for that year.
+#' @param b end year. It is usually the current year.
 #' @author Jose V. Die
 #' @export
 
-h.plot <- function(file) {
-          barplot(geth(file), ylab="h-index", names.arg=2007:2015,
+h.plot <- function(file,a,b) {
+          barplot(geth(file), ylab="h-index", names.arg=a:b,
                   col="steelblue")
 }

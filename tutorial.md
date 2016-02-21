@@ -71,7 +71,7 @@ library(devtools)
 **Step3**. Install the **hIndexOverYears** package. 
 
 ```r
-install.packages("jdieramon/hIndex")
+install_github("jdieramon/hIndex")
 ```
 
 

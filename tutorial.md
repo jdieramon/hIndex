@@ -39,7 +39,6 @@ Column names are found in:
 ```r
 colnames(dat) = c(as.character(unlist(dat[6,1:7])),dat[5,8:ncol(dat)])
 ```
-####clave: scar los elementos de una lista y luego convertirlos a character
 <br>
 **Step3: remove unnecessary columns and rows**  
 

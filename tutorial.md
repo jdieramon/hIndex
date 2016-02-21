@@ -6,6 +6,10 @@ This is a markdown tutorial on how to use the **hIndexOverYears** package. It is
 from [Scoups](www.scopus.com) Database**.  
 <br>  
   
+### Corrections
+
+Improvements and corrections to this document can be submitted on its [GitHub](https://github.com/jdieramon/hIndex/blob/master/tutorial.Rmd) in its [repository](https://github.com/jdieramon/hIndex).
+
 ### Data set
 1. Get the list of documents written by a given author and click on *View citation overview*.
 ![](figures/fig1.png)
@@ -39,6 +43,7 @@ Column names are found in:
 ```r
 colnames(dat) = c(as.character(unlist(dat[6,1:7])),dat[5,8:ncol(dat)])
 ```
+####clave: scar los elementos de una lista y luego convertirlos a character
 <br>
 **Step3: remove unnecessary columns and rows**  
 
@@ -74,7 +79,7 @@ install_github("jdieramon/hIndex")
 ```
 
 ***
-### Working with the hIndexOverYears package
+### Usage
 Load the package
 
 ```r

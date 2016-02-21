@@ -74,5 +74,34 @@ library(devtools)
 install_github("jdieramon/hIndex")
 ```
 
+***
+### Working with the hIndexOverYears package
+Load the package
 
+```r
+library(hIndexOverYears)
+```
 
+<br>
+Let´s take a look at the documentation of the package.
+
+```r
+library(help=hIndexOverYears)
+```
+![](figures/fig4.png)
+
+<br>
+You can see the code for the functions:
+
+```r
+?geth
+?h.plot
+```
+
+<br>
+You can use the *h.plot* function on the tidy data to show the h Index evolution (from year with h=0 to the current year):
+
+```r
+h.plot(dat, 2007, 2016)
+```
+![](figures/Rplot.png)

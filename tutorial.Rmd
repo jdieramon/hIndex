@@ -16,17 +16,17 @@ from [Scoups](www.scopus.com) Database**.
 Improvements and corrections to this document can be submitted on its [GitHub](https://github.com/jdieramon/hIndex/blob/master/tutorial.Rmd) in its [repository](https://github.com/jdieramon/hIndex).
 
 ### Data set
-1. Get the list of documents written by a given author and click on *View citation overview*.
+* Get the list of documents written by a given author and click on *View citation overview*.
 ![](figures/fig1.png)
   
 <br>  
     
-2. Set the Data range. Starting year corresponds to a year, so **h index = 0 for that author**. 
+* Set the Data range. Starting year corresponds to a year, so **h index = 0 for that author**. 
 ![](figures/fig2.png)
 *Note for Senior Authors*: Scopus citation overview page can display up to 16 years. If your publication history goes back <2000, you will have to use **`r as.numeric(format(Sys.Date(), "%Y"))-16`** as your starting year.   
 <br>  
 
-3. Export the citation overview to a spreedsheet  
+* Export the citation overview to a spreedsheet  
 ![](figures/fig3.png)
 
 ***

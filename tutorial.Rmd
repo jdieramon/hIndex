@@ -23,7 +23,7 @@ Improvements and corrections to this document can be submitted on its [GitHub](h
     
 2. Set the Data range. Starting year corresponds to a year, so **h index = 0 for that author**. 
 ![](figures/fig2.png)
-  
+*Note for Senior Authors*: Scopus citation overview page can display up to 16 years. If your publication history goes back <2000, you will have to use **`r as.numeric(format(Sys.Date(), "%Y"))-16`** as your starting year.   
 <br>  
 
 3. Export the citation overview to a spreedsheet  

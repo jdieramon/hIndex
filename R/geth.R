@@ -5,7 +5,9 @@
 #'
 #' @param
 #' file a tidy data frame with papers in row and other info in colums
-#' where column 7 corresponds to the first year of h=0.
+#' where column 7 corresponds to the starting year.
+#' @param
+#' h an integer number with the h-index for the starting year.
 #' @author Jose V. Die
 #' @details
 #' This function calculates cumulative number of citations starting with the
@@ -13,8 +15,8 @@
 #' @seealso \code{rowSums}
 #' @export
 
-geth <- function(file) {
-          h <- 0
+geth <- function(file,h=0) {
+          h <- h
           vals <- numeric(1)
           cont <- 1
           for(i in 9:ncol(file)) {
@@ -41,12 +43,13 @@ geth <- function(file) {
 #' by the \code{geth} function and plots them up.
 #'
 #' @param file a tidy data frame with papers in rows and other info in colums;
-#' @param a starting year, so h=0 for that year.
+#' @param a starting year.
 #' @param b end year. It is usually the current year.
+#' @param h the h-index that corresponds to the starting year (by default=0).
 #' @author Jose V. Die
 #' @export
 
-h.plot <- function(file,a,b) {
-          barplot(geth(file), ylab="h-index", names.arg=a:b,
+h.plot <- function(file,a,b,h) {
+          barplot(geth(file,h), ylab="h-index", names.arg=a:b,
                   col="steelblue")
 }

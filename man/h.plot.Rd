@@ -4,14 +4,16 @@
 \alias{h.plot}
 \title{Plot the h-trajectory}
 \usage{
-h.plot(file, a, b)
+h.plot(file, a, b, h)
 }
 \arguments{
 \item{file}{a tidy data frame with papers in rows and other info in colums;}
 
-\item{a}{starting year, so h=0 for that year.}
+\item{a}{starting year.}
 
 \item{b}{end year. It is usually the current year.}
+
+\item{h}{the h-index that corresponds to the starting year (by default=0).}
 }
 \description{
 This function takes the h-index values for a given author over the years produced

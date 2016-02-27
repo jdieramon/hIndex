@@ -4,11 +4,13 @@
 \alias{geth}
 \title{Get the h-index From the Scopus Database}
 \usage{
-geth(file)
+geth(file, h = 0)
 }
 \arguments{
 \item{file}{a tidy data frame with papers in row and other info in colums
-where column 7 corresponds to the first year of h=0.}
+where column 7 corresponds to the starting year.}
+
+\item{h}{an integer number with the h-index for the starting year.}
 }
 \description{
 This function assumes tidy data from Scopus (file) and generates the h-index

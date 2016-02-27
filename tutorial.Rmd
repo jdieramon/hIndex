@@ -19,12 +19,11 @@ Improvements and corrections to this document can be submitted on its [GitHub](h
 * Get the list of documents written by a given author and click on *View citation overview*.
 ![](figures/fig1.png)
   
-<br>  
-    
+
 * Set the Data range. Starting year corresponds to a year, so **h index = 0 for that author**. 
 ![](figures/fig2.png)
-*Note for Senior Authors*: Scopus citation overview page can display up to 16 years. If your publication history goes back <2000, you will have to use **`r as.numeric(format(Sys.Date(), "%Y"))-16`** as your starting year.   
-<br>  
+  
+**Note for Senior Authors**: Scopus citation overview page can display up to 16 years. If your publication history goes back <2000, you will have to use **`r as.numeric(format(Sys.Date(), "%Y"))-16`** as your starting year.  
 
 * Export the citation overview to a spreedsheet  
 ![](figures/fig3.png)
@@ -98,8 +97,8 @@ You can see the code for the functions:
 ```
 
 <br>
-You can use the *h.plot* function on the tidy data to show the h Index evolution (from year with h=0 to the current year):
+You can use the *h.plot* function on the tidy data to show the h Index evolution. If the starting year does not correspond with h=0, you can enter the h value as an argument:
 ```{r plot, eval=FALSE}
-h.plot(dat, 2007, 2016)
+h.plot(dat, 2007, 2016, 0)
 ```
 ![](figures/Rplot.png)

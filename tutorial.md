@@ -101,9 +101,9 @@ You can see the code for the functions:
 ```
 
 <br>
-You can use the *h.plot* function on the tidy data to show the h Index evolution (from year with h=0 to the current year):
+You can use the *h.plot* function on the tidy data to show the h Index evolution. If the starting year does not correspond with h=0, you can enter the h value as an argument:
 
 ```r
-h.plot(dat, 2007, 2016)
+h.plot(dat, 2007, 2016, 0)
 ```
 ![](figures/Rplot.png)

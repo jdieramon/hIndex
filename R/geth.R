@@ -53,3 +53,51 @@ h.plot <- function(file,a,b,h) {
           barplot(geth(file,h), ylab="h-index", names.arg=a:b,
                   col="steelblue")
 }
+
+#' Format the file and estimate the time that takes to get 1 citation
+#'
+#' @param file a tidy data frame
+#' @return a tidy data frame that will be used by \code{plot1cite}
+#' @author Jose V. Die
+#' @export
+#' @import dplyr
+
+format1cite <- function(file) {
+          tmp <-  as.Date(Sys.Date(), '%Y/%m/%d')
+          now = as.numeric(format(tmp, '%Y'))
+          time = now - as.numeric(as.character(file[,1]))
+          dat = mutate(file, Cites = apply(file[,8:17], 1, sum)) %>%
+                    arrange(desc(Cites)) %>%
+                    mutate(Years= now - as.numeric(as.character(`Publication Year`))) %>%
+                    filter(Years>0) %>%
+                    mutate(sC=round(Years*12/Cites,2)) %>%
+                    arrange(sC) %>%
+                    filter(sC < 12) %>%
+                    select(1:3,5,20)
+          dat
+
+}
+
+#' Plot the time that takes to get 1 citation for a set of publications
+#'
+#' This function takes the file produced by the \code{format1cite} and plot it.
+#'
+#' @param file a tidy data frame produced by \code{format1cite}
+#' @author Jose V. Die
+#' @export
+#' @importFrom RColorBrewer brewer.pal
+
+plot1cite <- function(file){
+          dat <- format1cite(file)
+          ncolor = sum(as.vector(table(cut(dat$sC, breaks=c(0:12))))>0)
+          cols <- rev(brewer.pal(ncolor, "BuGn"))
+          ntone = as.vector(table(cut(dat$sC, breaks=c(0:12))))[as.vector(table(cut(dat$sC, breaks=c(0:12))))>0]
+          tones=rep(cols, ntone)
+          names=dat$`Publication Year`
+          barplot(dat$sC, col=tones, ylab = "Months",
+                  main = "Getting 1 cite",
+                  ylim=c(1,11), names.arg=names, cex.names = 0.8, las=1)
+
+}
+
+

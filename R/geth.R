@@ -80,7 +80,7 @@ format1cite <- function(file) {
 
 #' Plot the time that takes to get 1 citation for a set of publications
 #'
-#' This function takes the file produced by the \code{format1cite} and plot it.
+#' This function takes the file produced by the \code{format1cite} and plots it up.
 #'
 #' @param file a tidy data frame produced by \code{format1cite}
 #' @author Jose V. Die
@@ -90,7 +90,7 @@ format1cite <- function(file) {
 plot1cite <- function(file){
           dat <- format1cite(file)
           ncolor = sum(as.vector(table(cut(dat$sC, breaks=c(0:12))))>0)
-          cols <- rev(brewer.pal(ncolor, "BuGn"))
+          cols <- rev(brewer.pal(ncolor, "Blues")) #"BuGn"
           ntone = as.vector(table(cut(dat$sC, breaks=c(0:12))))[as.vector(table(cut(dat$sC, breaks=c(0:12))))>0]
           tones=rep(cols, ntone)
           names=dat$`Publication Year`
@@ -99,5 +99,3 @@ plot1cite <- function(file){
                   ylim=c(1,11), names.arg=names, cex.names = 0.8, las=1)
 
 }
-
-

@@ -10,7 +10,7 @@ plot1cite(file)
 \item{file}{a tidy data frame produced by \code{format1cite}}
 }
 \description{
-This function takes the file produced by the \code{format1cite} and plot it.
+This function takes the file produced by the \code{format1cite} and plots it up.
 }
 \author{
 Jose V. Die

@@ -94,8 +94,8 @@ plot1cite <- function(file){
           ntone = as.vector(table(cut(dat$sC, breaks=c(0:12))))[as.vector(table(cut(dat$sC, breaks=c(0:12))))>0]
           tones=rep(cols, ntone)
           names=dat$`Publication Year`
-          barplot(dat$sC, col=tones, ylab = "Months",
+          xx <- barplot(dat$sC, col=tones, ylab = "Months",
                   main = "Getting 1 cite",
-                  ylim=c(1,11), names.arg=names, cex.names = 0.8, las=1)
-
+                  ylim=c(1,11), cex.names = 0.8, las=1)
+          text(x = xx, y = dat3$sC, label = names, pos = 3, cex = 0.8, col = "steelblue")
 }

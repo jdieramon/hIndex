@@ -97,5 +97,5 @@ plot1cite <- function(file){
           xx <- barplot(dat$sC, col=tones, ylab = "Months",
                   main = "Getting 1 cite",
                   ylim=c(1,11), cex.names = 0.8, las=1)
-          text(x = xx, y = dat3$sC, label = names, pos = 3, cex = 0.8, col = "steelblue")
+          text(x = xx, y = dat$sC, label = names, pos = 3, cex = 0.8, col = "steelblue")
 }

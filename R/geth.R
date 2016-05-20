@@ -63,19 +63,19 @@ h.plot <- function(file,a,b,h) {
 #' @import dplyr
 
 format1cite <- function(file) {
-          tmp <-  as.Date(Sys.Date(), '%Y/%m/%d')
-          now = as.numeric(format(tmp, '%Y'))
-          time = now - as.numeric(as.character(file[,1]))
-          dat = mutate(file, Cites = apply(file[,8:17], 1, sum)) %>%
-                    arrange(desc(Cites)) %>%
-                    mutate(Years= now - as.numeric(as.character(`Publication Year`))) %>%
-                    filter(Years>0) %>%
-                    mutate(sC=round(Years*12/Cites,2)) %>%
-                    arrange(sC) %>%
-                    filter(sC < 12) %>%
-                    select(1:3,5,20)
-          dat
-
+    tmp <-  as.Date(Sys.Date(), '%Y/%m/%d')
+    now = as.numeric(format(tmp, '%Y'))
+    time = now - as.numeric(as.character(file[,1]))
+    dat = mutate(file, Cites = apply(file[,8:ncol(file)], 1, sum)) %>%
+        arrange(desc(Cites)) %>%
+        mutate(Years= now - as.numeric(as.character(`Publication Year`))) %>%
+        filter(Years>0) %>%
+        mutate(sC=round(Years*12/Cites,2)) %>%
+        arrange(sC) %>%
+        filter(sC < 12) %>%
+        select(`Publication Year`, `Journal Title`, `sC`)
+    dat
+    
 }
 
 #' Plot the time that takes to get 1 citation for a set of publications

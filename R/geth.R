@@ -1,3 +1,14 @@
+clean <- function(fileName) {
+    dat <- read.csv("CTOExport.csv")
+    colnames(dat) = c(as.character(unlist(dat[6,1:7])),dat[5,8:ncol(dat)])
+    dat = dat[ , 1:(ncol(dat)-3)]
+    dat=dat[,-8]
+    dat = dat[-c(1:6),]
+    dat
+    }
+
+
+
 #' Get the h-index From the Scopus Database
 #'
 #' This function assumes tidy data from Scopus (file) and generates the h-index

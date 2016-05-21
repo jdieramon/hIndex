@@ -99,8 +99,6 @@ You also can use the *plot1cite()* function to get a sense of how long it takes 
 ```r
 plot1cite(dat)
 ```
-
-![](tutorial_files/figure-html/unnamed-chunk-6-1.png) 
 ![](figures/fig5.png) 
 
 <br>

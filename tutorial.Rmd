@@ -77,13 +77,11 @@ Before we can work with further analysis, we want to make data tidy. The good th
 ```{r}
 dat <- clean("CTOExport.csv")
 ```
-<br>
 
 Now, the data set is ready to further analysis with the **hIndexOverYears** package. 
+    
   
-<br>
-
-**Plot your h Index over years**
+**Plot your h Index over years**  
 You can use the *h.plot()* function on the tidy data to show the h Index evolution. If the starting year does not correspond with h=0, you can enter the h value as an argument:
 ```{r plot, eval=FALSE}
 h.plot(dat, 2007, 2016, 0)

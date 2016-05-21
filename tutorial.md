@@ -85,7 +85,7 @@ Now, the data set is ready to further analysis with the **hIndexOverYears** pack
   
 <br>
 
-**Plot your h Index over years**
+**Plot your h Index over years**  
 You can use the *h.plot()* function on the tidy data to show the h Index evolution. If the starting year does not correspond with h=0, you can enter the h value as an argument:
 
 ```r

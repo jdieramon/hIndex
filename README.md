@@ -6,5 +6,6 @@ by the Professor of Biodiversity in the Department of Environmental and Geograph
 
 By using the R-package you will be able to: 
 * observe how your h-index has changed over your career time
-* compare your h-index change with others scientists' change 
+* compare your h-index change with others scientists'change 
+* estimate how long it takes on average to get 1 citation (from publication date to present) for your most highly accessed papers. 
 

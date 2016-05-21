@@ -27,23 +27,23 @@ clean <- function(fileName) {
 #' @export
 
 geth <- function(file,h=0) {
-          h <- h
-          vals <- numeric(1)
-          cont <- 1
-          for(i in 9:ncol(file)) {
-                    ind <- which(rowSums(file[,8:i]) > h)
-                    potential.h <- length(rowSums(file[ind,8:i]))
-                    if(potential.h > h) {
-                              for(j in potential.h:h) {
-                                        if((sum(rowSums(file[ind,8:i]) >=j) >=j)==TRUE) {
-                                                  h=j
-                                                  break                                       }
-                              }
-                    }
-                    cont <- cont + 1
-                    vals[cont] <- h
-          }
-          vals
+    h <- h
+    vals <- numeric(1)
+    cont <- 1
+    for(i in 9:ncol(file)) {
+        ind <- which(rowSums(file[,8:i]) > h)
+        potential.h <- length(rowSums(file[ind,8:i]))
+        if(potential.h > h) {
+            for(j in potential.h:h) {
+                if((sum(rowSums(file[ind,8:i]) >=j) >=j)==TRUE) {
+                    h=j
+                    break                                       }
+            }
+        }
+        cont <- cont + 1
+        vals[cont] <- h
+    }
+    vals
 }
 
 
@@ -61,8 +61,12 @@ geth <- function(file,h=0) {
 #' @export
 
 h.plot <- function(file,a,b,h) {
-          barplot(geth(file,h), ylab="h-index", names.arg=a:b,
-                  col="steelblue")
+    if (b > as.numeric(colnames(file)[ncol(file)])){
+        b = as.numeric(colnames(file)[ncol(file)])
+    } # this is the max year that can be plotted 
+        
+    barplot(geth(file,h), ylab="h-index", names.arg=a:b,
+            col="steelblue")
 }
 
 #' Format the file and estimate the time that takes to get 1 citation
@@ -86,8 +90,7 @@ format1cite <- function(file) {
         filter(sC < 12) %>%
         select(`Publication Year`, `Journal Title`, `sC`)
     dat
-    
-}
+    }
 
 #' Plot the time that takes to get 1 citation for a set of publications
 #'
@@ -99,14 +102,14 @@ format1cite <- function(file) {
 #' @importFrom RColorBrewer brewer.pal
 
 plot1cite <- function(file){
-          dat <- format1cite(file)
-          ncolor = sum(as.vector(table(cut(dat$sC, breaks=c(0:12))))>0)
-          cols <- rev(brewer.pal(ncolor, "Blues")) #"BuGn"
-          ntone = as.vector(table(cut(dat$sC, breaks=c(0:12))))[as.vector(table(cut(dat$sC, breaks=c(0:12))))>0]
-          tones=rep(cols, ntone)
-          names=dat$`Publication Year`
-          xx <- barplot(dat$sC, col=tones, ylab = "Months",
-                  main = "Getting 1 cite",
-                  ylim=c(1,11), cex.names = 0.8, las=1)
-          text(x = xx, y = dat$sC, label = names, pos = 3, cex = 0.8, col = "steelblue")
+    dat <- format1cite(file)
+    ncolor = sum(as.vector(table(cut(dat$sC, breaks=c(0:12))))>0)
+    cols <- rev(brewer.pal(ncolor, "Blues")) #"BuGn"
+    ntone = as.vector(table(cut(dat$sC, breaks=c(0:12))))[as.vector(table(cut(dat$sC, breaks=c(0:12))))>0]
+    tones=rep(cols, ntone)
+    names=dat$`Publication Year`
+    xx <- barplot(dat$sC, col=tones, ylab = "Months",
+                  main = "Getting 1 citation",
+                  ylim=c(1,12), cex.names = 0.8, las=1)
+    text(x = xx, y = dat$sC, label = names, pos = 3, cex = 0.8, col = "steelblue")
 }

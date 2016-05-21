@@ -1,3 +1,13 @@
+#' Read & Clean data from a File Dowloaded from the Scopus Database
+#'
+#' This function reads and performs tidy data on a file that has been dowloaded
+#' from the Scopus Database. For more info on how to dowload the file, please
+#' read the tutorial of this package in https://github.com/jdieramon/hIndex
+#' @param
+#' file a file downloaded from Scopus
+#' @author Jose V. Die
+#' @export
+
 clean <- function(fileName) {
     dat <- read.csv("CTOExport.csv")
     colnames(dat) = c(as.character(unlist(dat[6,1:7])),dat[5,8:ncol(dat)])
@@ -8,15 +18,14 @@ clean <- function(fileName) {
     }
 
 
-
 #' Get the h-index From the Scopus Database
 #'
-#' This function assumes tidy data from Scopus (file) and generates the h-index
-#' over years (from the first year [h=0] until the most recent year [h=x]).
+#' This function takes the tidy data file created by the \code{clead} function
+#' and generates the h-index over years (from the first year [h=0] until the
+#' most recent year [h=x]).
 #'
 #' @param
 #' file a tidy data frame with papers in row and other info in colums
-#' where column 7 corresponds to the starting year.
 #' @param
 #' h an integer number with the h-index for the starting year.
 #' @author Jose V. Die
@@ -47,11 +56,10 @@ geth <- function(file,h=0) {
 }
 
 
-
 #' Plot the h-trajectory
 #'
-#' This function takes the h-index values for a given author over the years produced
-#' by the \code{geth} function and plots them up.
+#' This function takes the h-index values for a given author over the years
+#' produced by the \code{geth} function and plots them up.
 #'
 #' @param file a tidy data frame with papers in rows and other info in colums;
 #' @param a starting year.
@@ -63,8 +71,8 @@ geth <- function(file,h=0) {
 h.plot <- function(file,a,b,h) {
     if (b > as.numeric(colnames(file)[ncol(file)])){
         b = as.numeric(colnames(file)[ncol(file)])
-    } # this is the max year that can be plotted 
-        
+    } # this is the max year that can be plotted
+
     barplot(geth(file,h), ylab="h-index", names.arg=a:b,
             col="steelblue")
 }
@@ -94,7 +102,8 @@ format1cite <- function(file) {
 
 #' Plot the time that takes to get 1 citation for a set of publications
 #'
-#' This function takes the file produced by the \code{format1cite} and plots it up.
+#' This function takes the file produced by the \code{format1cite} and plots
+#' it up.
 #'
 #' @param file a tidy data frame produced by \code{format1cite}
 #' @author Jose V. Die

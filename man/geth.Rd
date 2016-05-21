@@ -7,14 +7,14 @@
 geth(file, h = 0)
 }
 \arguments{
-\item{file}{a tidy data frame with papers in row and other info in colums
-where column 7 corresponds to the starting year.}
+\item{file}{a tidy data frame with papers in row and other info in colums}
 
 \item{h}{an integer number with the h-index for the starting year.}
 }
 \description{
-This function assumes tidy data from Scopus (file) and generates the h-index
-over years (from the first year [h=0] until the most recent year [h=x]).
+This function takes the tidy data file created by the \code{clead} function
+and generates the h-index over years (from the first year [h=0] until the
+most recent year [h=x]).
 }
 \details{
 This function calculates cumulative number of citations starting with the

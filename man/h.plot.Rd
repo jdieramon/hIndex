@@ -16,8 +16,8 @@ h.plot(file, a, b, h)
 \item{h}{the h-index that corresponds to the starting year (by default=0).}
 }
 \description{
-This function takes the h-index values for a given author over the years produced
-by the \code{geth} function and plots them up.
+This function takes the h-index values for a given author over the years
+produced by the \code{geth} function and plots them up.
 }
 \author{
 Jose V. Die

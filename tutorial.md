@@ -123,3 +123,8 @@ format1cite(dat)
 ## 11             2013                                    PLoS ONE 7.20
 ## 12             2012              Journal of Experimental Botany 9.60
 ```
+  
+Session information
+```r
+sessionInfo()
+```

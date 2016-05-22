@@ -100,3 +100,8 @@ You may want to list those publications. The output shows the Publication Year, 
 ```{r}
 format1cite(dat)
 ```
+  
+  Session information
+```{r}
+sessionInfo()
+```

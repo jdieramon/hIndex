@@ -118,7 +118,7 @@ plot1cite <- function(file){
     tones=rep(cols, ntone)
     names=dat$`Publication Year`
     xx <- barplot(dat$sC, col=tones, ylab = "Months",
-                  main = "Getting 1 citation", xlab="Publication Id."
+                  main = "Getting 1 citation", xlab="Publication Id.",
                   ylim=c(1,12), cex.names = 0.8, las=1)
     text(x = xx, y = dat$sC, label = names, pos = 3, cex = 0.8, col = "steelblue")
 }

@@ -4,7 +4,7 @@ Title: Plotting up the h-index Over Time
 Version: 0.1
 Date: 2016-02-17
 Author: Jose V. Die
-Maintainer: Jose V. Die <Jose.Die@ars.usda.gov>
+Maintainer: Jose V. Die <jdieramon@upv.es>
 Description: Functions for calculating and plotting the h-index over time ("h-
     trajectory") using Scopus info as input data.
 License: GPL-3

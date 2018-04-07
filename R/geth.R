@@ -1,6 +1,6 @@
 #' Read & Clean data from a File Dowloaded from the Scopus Database
 #'
-#' This function reads and performs tidy data on a file that has been dowloaded
+#' This function reads and performs tidy data on a file dowloaded
 #' from the Scopus Database. For more info on how to dowload the file, please
 #' read the tutorial of this package in https://github.com/jdieramon/hIndex
 #' @param
@@ -9,7 +9,7 @@
 #' @export
 
 clean <- function(fileName) {
-    dat <- read.csv("CTOExport.csv")
+    dat <- read.csv(fileName)
     colnames(dat) = c(as.character(unlist(dat[6,1:7])),dat[5,8:ncol(dat)])
     dat = dat[ , 1:(ncol(dat)-3)]
     dat=dat[,-8]

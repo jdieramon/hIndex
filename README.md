@@ -11,5 +11,5 @@ By using the R-package you will be able to:
   
   What's new ? 
 ====
-* **V1.0** 2018-09-02. Create plots using ggplot2 packg.  
+* **V1.0** 2018-09-02. Create plots using ggplot2.    
 * **V0.1** 2016-02-17. First release.

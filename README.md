@@ -8,3 +8,8 @@ By using the R-package you will be able to:
   * observe how your h-index has changed over your career time  
   * compare your h-index change with others scientists'change   
   * estimate how long it takes on average to get 1 citation for your most highly accessed papers (from publication date to present). 
+  
+  What's new ? 
+====
+* **V1.0** 2018-09-02. Create plots using ggplot2 packg.  
+* **V0.1** 2016-02-17. First release.

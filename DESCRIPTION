@@ -1,8 +1,8 @@
 Package: hIndexOverYears
 Type: Package
 Title: Plotting up the h-index Over Time
-Version: 0.1
-Date: 2016-02-17
+Version: 1.0
+Date: 2018-09-03
 Author: Jose V. Die
 Maintainer: Jose V. Die <jodiera@upv.es>
 Description: Functions for calculating and plotting the h-index over time ("h-

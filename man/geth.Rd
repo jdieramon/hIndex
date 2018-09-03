@@ -4,10 +4,10 @@
 \alias{geth}
 \title{Get the h-index From the Scopus Database}
 \usage{
-geth(file, h = 0)
+geth(file, h = 0, stop)
 }
 \arguments{
-\item{file}{a tidy data frame with papers in row and other info in colums}
+\item{file}{a tidy data frame with papers in rows and other info in colums}
 
 \item{h}{an integer number with the h-index for the starting year.}
 }
@@ -20,10 +20,9 @@ most recent year [h=x]).
 This function calculates cumulative number of citations starting with the
 first year of your publication (which is assumed in the function to be h=0)
 }
-\author{
-Jose V. Die
-}
 \seealso{
 \code{rowSums}
 }
-
+\author{
+Jose V. Die
+}

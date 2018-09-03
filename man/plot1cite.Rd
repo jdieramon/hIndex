@@ -16,4 +16,3 @@ it up.
 \author{
 Jose V. Die
 }
-

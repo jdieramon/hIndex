@@ -22,4 +22,3 @@ produced by the \code{geth} function and plots them up.
 \author{
 Jose V. Die
 }
-

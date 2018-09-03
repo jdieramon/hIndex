@@ -10,11 +10,10 @@ clean(fileName)
 \item{file}{a file downloaded from Scopus}
 }
 \description{
-This function reads and performs tidy data on a file that has been dowloaded
+This function reads and performs tidy data on a file dowloaded
 from the Scopus Database. For more info on how to dowload the file, please
 read the tutorial of this package in https://github.com/jdieramon/hIndex
 }
 \author{
 Jose V. Die
 }
-

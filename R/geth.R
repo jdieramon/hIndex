@@ -76,6 +76,9 @@ geth <- function(file, h=0, stop) {
 
 h.plot <- function(file,a,b,h) {
 
+          if( a != as.numeric(colnames(dat[8])) ) stop('history starts in ',
+                                                       as.numeric(colnames(dat[8])))
+
           fin = as.numeric(names(dat)[ncol(dat)])
           stop = ifelse(b > fin, fin, b)
 
@@ -105,7 +108,7 @@ h.plot <- function(file,a,b,h) {
 #' @export
 #' @import dplyr
 
-get1cite <- function(file) {
+get1cite <- function(file,n=10) {
           tmp <-  as.Date(Sys.Date(), '%Y/%m/%d')
           now = as.numeric(format(tmp, '%Y'))
           time = now - as.numeric(as.character(file[,1]))
@@ -116,10 +119,10 @@ get1cite <- function(file) {
                     filter(Years>0) %>%
                     mutate(avgMonth=round(Years*12/Cites,2)) %>%
                     arrange(avgMonth) %>%
-                    filter(avgMonth < 12) %>%
                     rename('Year' = `Publication Year`, 'Journal' = `Journal Title`) %>%
                     select(Year, Journal, avgMonth)
-          dat
+
+          head(dat, n)
 }
 
 
@@ -130,7 +133,6 @@ get1cite <- function(file) {
 #'
 #' @param file a tidy data frame produced by \code{format1cite}
 #' @author Jose V. Die
-#' @importFrom RColorBrewer brewer.pal
 
 plot1cite <- function(file){
           dat <- format1cite(file)

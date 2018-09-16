@@ -19,7 +19,7 @@ Improvements and corrections to this document can be submitted on its [GitHub](h
 ![](figures/fig1.png)
   
 
-* Set Data range. Starting year corresponds to the beginnning publication record, so that author has **h index = 0**. 
+* Set Data range. Starting year corresponds to the beginnning publication record, so that author has **h index = 0**. Then, update the system. 
 ![](figures/fig2.png)
   
 * Export the citation overview to a spreedsheet  

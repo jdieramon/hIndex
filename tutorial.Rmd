@@ -7,8 +7,7 @@ output:
     keep_md: yes
 ---
   
-This is a markdown tutorial on how to use the **hIndexOverYears** package. It is based on the overview of citations from a given author. **Data have to be obtained
-from [Scoups](www.scopus.com) Database**.  
+This is a markdown tutorial for the **hIndexOverYears** package. It is based on the overview of citations from a given author. **Data has to be obtained from [Scoups](www.scopus.com) Database**.  
 <br>  
   
 ### Corrections
@@ -20,11 +19,9 @@ Improvements and corrections to this document can be submitted on its [GitHub](h
 ![](figures/fig1.png)
   
 
-* Set the Data range. Starting year corresponds to a year, so **h index = 0 for that author**. 
+* Set Data range. Starting year corresponds to the beginnning publication record, so that author has **h index = 0**. 
 ![](figures/fig2.png)
   
-**Note for Senior Authors**: Scopus citation overview page can display up to 16 years. If your publication history goes back <2000, you will have to use **`r as.numeric(format(Sys.Date(), "%Y"))-16`** as your starting year.  
-
 * Export the citation overview to a spreedsheet  
 ![](figures/fig3.png)
 
@@ -50,7 +47,7 @@ install_github("jdieramon/hIndex")
   
 ### Usage
 Load the package
-```{r }
+```{r message = FALSE}
 library(hIndexOverYears)
 ```
 
@@ -64,43 +61,41 @@ library(help=hIndexOverYears)
 <br>
 You can see the code for the functions:
 ```{r code}
-?geth
 ?h.plot
-?plot1cite
+?get1cite
 ```
 
-<br>  
-Tidy Data  
-Before we can work with further analysis, we want to make data tidy. The good thing is that Scopus keeps the same format for every citation overview, so data cleaning can be performed in one easy step. The function *clean()*  will read and clean the data for you.
+### Tidy Data  
+Before we start the analysis, we want to make the data tidy. The good thing is that Scopus keeps the same format for every citation overview, so data cleaning can be performed in one easy step. The function `clean` will read and clean the data for you.
 
 **Load and clean data**
 ```{r}
 dat <- clean("CTOExport.csv")
 ```
 
-Now, the data set is ready to further analysis with the **hIndexOverYears** package. 
+Now, the dataset is ready for further analysis.  
     
   
-**Plot your h Index over years**  
-You can use the *h.plot()* function on the tidy data to show the h Index evolution. If the starting year does not correspond with h=0, you can enter the h value as an argument:
+### Plot the h Index  
+You can also use the `h.plot` function on the tidy data to show the h Index evolution over years. If the starting year does not correspond with h=0, you can enter the h value as an argument:
 ```{r plot, eval=FALSE}
-h.plot(dat, 2007, 2016, 0)
+h.plot(dat, 2007, 2018, 0)
 ```
 ![](figures/Rplot.png)
 
 <br>
-You also can use the *plot1cite()* function to get a sense of how long it takes to get 1 citation for your most highly cited papers. 
+You may also want to use the `get1cite`function to list your most highly cited papers (top10) and get a sense of how long it takes to get then 1 citation. 
+The function shows by default your top10 cited papers, but you can give the number of papers as an argument. It shows the average time (in months) per 1 cite. 
+
+
 ```{r}
-plot1cite(dat)
+get1cite(dat)
 ```
-![](figures/fig5.png) 
+
 
 <br>
-You may want to list those publications. The output shows the Publication Year, Journal Title and the estimate of Months/1citation.
-```{r}
-format1cite(dat)
-```
-  
+
+
   Session information
 ```{r}
 sessionInfo()

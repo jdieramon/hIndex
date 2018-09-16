@@ -9,4 +9,5 @@ Description: Functions for calculating and plotting the h-index over time ("h-
     trajectory") using Scopus info as input data.
 License: GPL-3
 LazyData: TRUE
+Depends:  dplyr, ggplot2
 RoxygenNote: 6.1.0

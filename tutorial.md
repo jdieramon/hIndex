@@ -59,6 +59,7 @@ library(help=hIndexOverYears)
 ![](figures/fig4.png)
 
 <br>
+  
 You can see the code for the functions:
 ```{r code}
 ?h.plot

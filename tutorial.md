@@ -92,6 +92,7 @@ The function shows by default your top10 cited papers, but you can give the numb
 ```{r}
 get1cite(dat)
 ```
+![](figures/fig5.png)
 
 
 <br>

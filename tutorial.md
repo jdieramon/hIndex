@@ -32,12 +32,12 @@ Improvements and corrections to this document can be submitted on its [GitHub](h
 ```{r eval=FALSE}
 install.packages("devtools")
 ```
-<br>
+
 **Step2**. Load the devtools package.
 ```{r eval=FALSE}
 library(devtools)
 ```
-<br>
+
 **Step3**. Install the **hIndexOverYears** package. 
 ```{r eval=FALSE}
 install_github("jdieramon/hIndex")
@@ -51,11 +51,12 @@ Load the package
 library(hIndexOverYears)
 ```
 
-<br>
-Let´s take a look at the documentation of the package.
-```{r docum}
-library(help=hIndexOverYears)
+Let´s take a look at the documentation of the package.  
+
+```{r}
+library(help=hIndexOverYears)  
 ```
+  
 ![](figures/fig4.png)
 
   

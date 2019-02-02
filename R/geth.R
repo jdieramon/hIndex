@@ -85,9 +85,10 @@ h.plot <- function(file,a,b,h) {
           y = c(a:stop)
 
           hvals = geth(file, h, stop)
-          hvals
+          
+          names(hvals) = y
           print(hvals)
-          print(y)
+
           myh = data.frame(Year = y, H = hvals)
 
           myh %>%
@@ -146,3 +147,4 @@ plot1cite <- function(file){
                         ylim=c(1,12), cex.names = 0.8, las=1)
           text(x = xx, y = dat$sC, label = names, pos = 3, cex = 0.8, col = "steelblue")
 }
+

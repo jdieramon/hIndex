@@ -4,7 +4,7 @@
 #' from the Scopus Database. For more info on how to dowload the file, please
 #' read the tutorial of this package in https://github.com/jdieramon/hIndex
 #' @param
-#' file a file downloaded from Scopus
+#' fileName a file downloaded from Scopus
 #' @author Jose V. Die
 #' @export
 

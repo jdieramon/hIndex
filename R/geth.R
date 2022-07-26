@@ -1,10 +1,11 @@
 #' Read & Clean data from a File Dowloaded from the Scopus Database
 #'
-#' This function reads and performs tidy data on a file dowloaded
-#' from the Scopus Database. For more info on how to dowload the file, please
+#' This function reads and performs tidy data on a file downloaded
+#' from the Scopus Database. For more info on how to download the file, please
 #' read the tutorial of this package in https://github.com/jdieramon/hIndex
+#'
 #' @param
-#' fileName a file downloaded from Scopus
+#' file a file downloaded from Scopus
 #' @author Jose V. Die
 #' @export
 
@@ -20,12 +21,12 @@ clean <- function(fileName) {
 
 #' Get the h-index From the Scopus Database
 #'
-#' This function takes the tidy data file created by the \code{clead} function
+#' This function takes the tidy data file created by the \code{clean} function
 #' and generates the h-index over years (from the first year [h=0] until the
 #' most recent year [h=x]).
 #'
 #' @param
-#' file a tidy data frame with papers in rows and other info in colums
+#' file a tidy data frame with papers in rows and other info in columns
 #' @param
 #' h an integer number with the h-index for the starting year.
 #' @author Jose V. Die
@@ -125,6 +126,85 @@ get1cite <- function(file,n=10) {
 
           head(dat, n)
 }
+
+
+
+
+
+#' Simple dataset : year and h index
+#' 
+#' Core function used by \code{\link{h.model}}.
+#'  
+#' @param file a tidy data frame with papers in rows and other info in colums;
+#' @param a starting year.
+#' @param b end year. It is usually the current year.
+#' @param h the h-index that corresponds to the starting year (by default=0).
+#' @author Jose V. Die
+
+
+df_h <- function(file,a,b,h) {
+    
+    if( a != as.numeric(colnames(dat[8])) ) stop('history starts in ',
+                                                 as.numeric(colnames(dat[8])))
+    fin = as.numeric(names(dat)[ncol(dat)])
+    stop = ifelse(b > fin, fin, b)
+    y = c(a:stop)
+    hvals = geth(file, h, stop)
+    names(hvals) = y
+    myh = data.frame(Year = y, H = hvals)
+    
+    myh
+    
+}
+
+#' Model the h-index over time 
+#' 
+#' This function makes a linear regression model of the h-index value for a given 
+#' author over the years. 
+#' 
+#' @param file a tidy data frame with papers in rows and other info in columns;
+#' @param a starting year.
+#' @param b end year. It is usually the current year.
+#' @param h the h-index that corresponds to the starting year (by default=0).
+#' @author Jose V. Die
+#' @export
+
+h.model <- function(file,a,b,h) {
+    
+    myh = df_h(file,a,b,h)
+    model_h <- lm(H ~ Year, data = myh)
+    summary(model_h)
+    
+}
+
+#' Plot a linear regression model for the h-index over time 
+#' 
+#' This function takes the h-index values for a given author over the years
+#' produced by the \code{df_h } function and plot a linear regression model.
+#'
+#' @param file a tidy data frame with papers in rows and other info in colums;
+#' @param a starting year.
+#' @param b end year. It is usually the current year.
+#' @param h the h-index that corresponds to the starting year (by default=0).
+#' @author Jose V. Die
+#' @export
+#' @import ggplot2
+#' @import dplyr
+
+
+model.plot <- function(file,a,b,h) {
+    
+    myh = df_h(file,a,b,h)
+    
+    myh %>% 
+        ggplot(aes(x = Year, y = H)) +
+        geom_point(color = "steelblue", alpha = .9) +
+        ylab('h Index') + 
+        geom_smooth(method = "lm", col = "coral", lwd = 0.2)
+    
+    
+}
+
 
 
 #' Plot the time that takes to get 1 citation for a set of publications

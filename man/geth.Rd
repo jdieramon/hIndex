@@ -7,12 +7,12 @@
 geth(file, h = 0, stop)
 }
 \arguments{
-\item{file}{a tidy data frame with papers in rows and other info in colums}
+\item{file}{a tidy data frame with papers in rows and other info in columns}
 
 \item{h}{an integer number with the h-index for the starting year.}
 }
 \description{
-This function takes the tidy data file created by the \code{clead} function
+This function takes the tidy data file created by the \code{clean} function
 and generates the h-index over years (from the first year [h=0] until the
 most recent year [h=x]).
 }

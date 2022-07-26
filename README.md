@@ -11,6 +11,7 @@ By using the R-package you will be able to:
   
   What's new ? 
 ====
+* **V1.5** 2022-07-26. Make a linear regression model.  
 * **V1.0** 2018-09-02. Create plots using ggplot2.    
 * **V0.1** 2016-02-17. First release.
 
@@ -127,6 +128,21 @@ get1cite(dat)
 
 
 <br>
+
+A new functionality included in v1.5 is the linear regression model. The function 
+`h.model` does the job using the same arguments as before: 
+```r
+h.plot(dat, 2007, 2022, 0)
+```
+![](figures/model.png)ls fig  
+
+Finally, the linear regression model can be plotted using the function `model.plot` that 
+takes the same arguments. 
+```r
+model.plot(dat, 2007, 2022, 0)
+```
+![](figures/model_plot.png)
+
 
 
   Session information

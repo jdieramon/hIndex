@@ -1,13 +1,14 @@
 Package: hIndexOverYears
 Type: Package
 Title: Plotting up the h-index Over Time
-Version: 1.0
-Date: 2018-09-03
+Version: 1.5
+Date: 2022-07-26
 Author: Jose V. Die
-Maintainer: Jose V. Die <jodiera@upv.es>
+Maintainer: Jose V. Die <jose.die@uco.es>
 Description: Functions for calculating and plotting the h-index over time ("h-
     trajectory") using Scopus info as input data.
 License: GPL-3
 LazyData: TRUE
-Depends:  dplyr, ggplot2
-RoxygenNote: 6.1.0
+Depends: dplyr, ggplot2
+Encoding: UTF-8
+RoxygenNote: 7.1.2

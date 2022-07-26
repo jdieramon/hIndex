@@ -4,7 +4,7 @@
 \alias{get1cite}
 \title{Format the file and estimate the time (in months) that takes to get 1 citation}
 \usage{
-get1cite(file)
+get1cite(file, n = 10)
 }
 \arguments{
 \item{file}{a tidy data frame}

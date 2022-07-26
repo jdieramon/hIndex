@@ -132,7 +132,11 @@ get1cite(dat)
 A new functionality included in v1.5 is the linear regression model. The function 
 `h.model` does the job using the same arguments as before: 
 ```r
+<<<<<<< HEAD
 h.plot(dat, 2007, 2022, 0)
+=======
+h.model(dat, 2007, 2022, 0)
+>>>>>>> 350c04bd892f69a1f1bd408c05f70a3d7aa36a30
 ```
 ![](figures/model.png)ls fig  
 

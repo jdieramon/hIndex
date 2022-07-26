@@ -128,7 +128,32 @@ get1cite <- function(file,n=10) {
 }
 
 
+#' Estimate the number of expected citations in a period of time
+#'
+#' This function estimated the number of expected citations in a period of time 
+#' based on the time that takes each paper to get 1 citation.
+#'
+#' @param file a tidy data frame
+#' @param term period of time in months
+#' 
+#' @usage
+#' expected_citations(dat, 6)
+#' 
+#' @author Jose V. Die
+#' @export
+#' @import dplyr
 
+expected_citations <- function(file, term) {
+    # file 
+    # term in months 
+    get1cite(file) %>% 
+        mutate(term = term, 
+               ratio = term / avgMonth, 
+               exp_cit = floor(ratio)) %>% 
+        select(Year, Journal, avgMonth, exp_cit)
+    
+    
+}
 
 
 #' Simple dataset : year and h index
@@ -205,6 +230,21 @@ model.plot <- function(file,a,b,h) {
     
 }
 
+
+
+
+
+expected_citations <- function(file, term) {
+    # file 
+    # term in months 
+    get1cite(file) %>% 
+        mutate(term = term, 
+               ratio = term / avgMonth, 
+               exp_cit = floor(ratio)) %>% 
+        select(Year, Journal, avgMonth, exp_cit)
+    
+    
+}
 
 
 #' Plot the time that takes to get 1 citation for a set of publications

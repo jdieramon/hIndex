@@ -125,6 +125,28 @@ get1cite(dat)
 ## 14 2016       Environmental and Experimental Botany     8.00
 ## 15 2011                     Analytical Biochemistry     9.33
 ```
+  
+  
+<br>
+  
+Related to that, the function `expected_citatios` will show the number of citations that are expected in a given interval of time (for example, 6 months) : 
+```r
+expected_citations(dat, 6)
+```
+```
+##   Year                                    Journal avgMonth exp_cit
+##1  2010                                     Planta     1.02       5
+##2  2018                               BMC Genomics     1.66       3
+##3  2011 Journal of Agricultural and Food Chemistry     1.97       3
+##4  2019                          BMC Plant Biology     3.00       2
+##5  2019                          BMC Plant Biology     3.00       2
+##6  2014      Environmental and Experimental Botany     3.10       1
+##7  2012             Journal of Experimental Botany     3.24       1
+##8  2013                                   PLoS ONE     3.27       1
+##9  2008                    Analytical Biochemistry     3.82       1
+##10 2018                         Scientific Reports     4.36       1
+```
+
 
 
 <br>

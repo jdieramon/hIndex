@@ -3,6 +3,8 @@
 export(clean)
 export(get1cite)
 export(geth)
+export(h.model)
 export(h.plot)
+export(model.plot)
 import(dplyr)
 import(ggplot2)

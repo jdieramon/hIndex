@@ -205,4 +205,3 @@ sessionInfo()
 ## [31] compiler_3.5.0     pillar_1.3.0       scales_1.0.0      
 ## [34] backports_1.1.2    pkgconfig_2.0.2
 ```
-

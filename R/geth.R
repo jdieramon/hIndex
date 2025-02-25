@@ -86,6 +86,7 @@ h.plot <- function(file,a,b,h) {
           y = c(a:stop)
 
           hvals = geth(file, h, stop)
+          hvals[1] = h #*LINEA NUEVA
           
           names(hvals) = y
           print(hvals)
@@ -175,6 +176,7 @@ df_h <- function(file,a,b,h) {
     stop = ifelse(b > fin, fin, b)
     y = c(a:stop)
     hvals = geth(file, h, stop)
+    hvals[1] = h #*LINEA NUEVA
     names(hvals) = y
     myh = data.frame(Year = y, H = hvals)
     

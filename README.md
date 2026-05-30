@@ -1,6 +1,14 @@
-[![DOI](https://zenodo.org/badge/52222368.svg)](https://doi.org/10.5281/zenodo.20460234)
-
 # hIndex
+
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)]()
+[![R-CMD-check](https://github.com/jdieramon/hIndex/actions/workflows/R-CMD-check.yaml/badge.svg)]()
+[![CRAN status](https://www.r-pkg.org/badges/version/hIndexOverYears)]()
+[![DOI](https://zenodo.org/badge/52222368.svg)](https://doi.org/10.5281/zenodo.20460234)
+[![License: GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)]()
+
+
+
+
 Compute and visualize h-index trajectories from Scopus exports.
   
 `hIndexOverYears` provides a lightweight workflow for exploring

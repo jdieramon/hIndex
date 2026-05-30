@@ -4,9 +4,20 @@ message: "If you use this software, please cite it."
 authors:
   - family-names: Die
     given-names: Jose V.
-orcid: https://orcid.org/0000-0002-7506-8590
+    email: jose.die@uco.es
+    orcid: https://orcid.org/0000-0002-7506-8590
 version: 2.0.0
 doi: 10.5281/zenodo.20460234
+preferred-citation:
+  type: software
+  title: "hIndexOverYears: h-index trajectories from Scopus data"
+  authors:
+    - family-names: Die
+      given-names: Jose V.
+  year: 2026
+  version: 1.0.0
+  url: "https://github.com/jdieramon/hIndex"
+  
 date-released: 2026-05-30
 repository-code: https://github.com/jdieramon/hIndex
 license: GPL-3.0

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: hIndexOverYears
+message: "If you use this software, please cite it."
+authors:
+  - family-names: Die
+    given-names: Jose V.
+orcid: https://orcid.org/0000-0002-7506-8590
+version: 2.0.0
+doi: 10.5281/zenodo.20460234
+date-released: 2026-05-30
+repository-code: https://github.com/jdieramon/hIndex
+license: GPL-3.0

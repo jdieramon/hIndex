@@ -1,0 +1,20 @@
+url: ~
+template:
+  bootstrap: 5
+home:
+  title: hIndexOverYears
+  description: Compute and visualize h-index trajectories from Scopus exports.
+navbar:
+  structure:
+    left: [reference, articles]
+    right: [github]
+reference:
+  - title: Main functions
+    contents:
+      - clean_scopus
+      - h_index
+      - plot_h
+      - fit_h_model
+      - plot_h_model
+      - citation_speed
+      - predict_citations

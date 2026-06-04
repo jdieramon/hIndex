@@ -18,20 +18,25 @@ over time using citation data exported from Scopus.
 This R-package is motivated by the reading of [How does a scientist's h-index change over time?](https://jeffollerton.wordpress.com/2015/05/10/how-does-a-scientists-h-index-change-over-time/), 
 by  **Jeff Ollertons**, Professor of Biodiversity in the Department of Environmental and Geographical Sciences at the University of Northampton. It is a great post and I highly recommend it.
     
+<br>
   
 ## What you can do 
 * observe how your h-index has changed over your career time  
 * compare your h-index change with others scientists'change   
 * estimate how long it takes on average to get 1 citation for your most highly accessed papers (from publication date to present). 
     
-      
+
+     
+     
 ## What's new ? 
 
 * **V1.5** 2022-07-26. Make a linear regression model.  
 * **V1.0** 2018-09-02. Create plots using ggplot2.    
 * **V0.1** 2016-02-17. First release.
 
-
+   <br>
+     
+     
 ### Corrections
 
 Improvements and corrections to this document can be submitted on its [GitHub](https://github.com/jdieramon/hIndex/blob/master/tutorial.Rmd) in its [repository](https://github.com/jdieramon/hIndex).
@@ -108,7 +113,7 @@ You can see the code for the functions:
 
 ## Workflow 
 
-Before we start the analysis, we want to make the data tidy. The good thing is that Scopus keeps the same format for every citation overview, so data cleaning can be performed in one easy step. The function `clean` will read and clean the data for you.
+Before we start the analysis, we want to make the data tidy. The good thing is that Scopus keeps the same format for every citation overview, so data cleaning can be performed in one easy step. The function `clean_scopus` will read and clean the data for you.
 
 **Data preparation**
 
@@ -120,7 +125,7 @@ Now, the dataset is ready for further analysis.
     
   
 ### Plot the h Index  
-You can also use the `h.plot` function on the tidy data to show the h Index evolution 
+You can also use the `plot_h` function on the tidy data to show the h Index evolution 
 over years. If the starting year does not correspond with h=0, you can enter 
 the h value as an argument:
 

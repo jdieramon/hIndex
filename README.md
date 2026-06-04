@@ -140,7 +140,7 @@ You may also want to use the `citation_speed` function to list your most highly 
 The function shows by default your top10 cited papers, but you can give the number of papers as an argument. It shows the average time (in months) per 1 cite. 
 
 ```r
-citation_speed(dat)
+citation_speed(dat, n=11)
 ```
 
 ```
@@ -162,7 +162,7 @@ citation_speed(dat)
   
 Related to that, the function `predict_citations` will show the number of citations that are expected in a given interval of time (for example, 6 months) : 
 ```r
-predict_citations(dat, term = 6)
+predict_citations(dat, term = 6, n= 10)
 ```
 ```
 ##   Year                                    Journal avgMonth exp_cit

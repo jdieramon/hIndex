@@ -297,9 +297,9 @@ citation_speed <- function(data, n = 10) {
 #'
 #' @export
 
-predict_citations <- function(data, term = 12) {
+predict_citations <- function(data, term = 12, n = 10) {
   
-  citation_speed(data) %>%
+  citation_speed(data, n=n) %>%
     mutate(
       expected_citations =
         floor(term / months_per_citation)

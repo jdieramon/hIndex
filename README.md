@@ -184,7 +184,8 @@ predict_citations(dat, term = 6, n= 10)
 
 A new functionality included in v1.5 is the linear regression model. The function `fit_h_model` does the job using the same arguments as before: 
 ```r
-fit_h_model(dat,start_year = 2007, end_year = 2026, h = 0)
+hmodel <- fit_h_model(dat,start_year = 2007, end_year = 2026, h = 0)
+summary(hmodel)
 ```
 
 ![](man/figures/model.png)  
